@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width. initial-scale=1">
+    <title>Document</title>
+    <style>
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+
+        ul, ol, li {list-style: none; margin: 0; padding: 0;}
+
+   
+    
+        
+
+       
+        .section{margin:10px 10px;width:100%; height:50px; display:contents; background-color:white;}
+        .section > hr {text-align:center; margin:10px 0 0 0; width:100%;  color:brown;}
+        .section > p {float:right; font-weight:bold;}
+        
+
+        .container{margin:10px 10px;width:100%; height:50px; display:flex; background-color:white; justify-content: center;}
+
+        .btn{border-radius:10px 10px;text-transform:uppercase;align-items:center; overflow:hidden;transition:all 0.4s; position:relative; border:3px solid #3c3e70;margin:0px 30px; cursor:pointer; font-size:25px;
+             padding:1px 30px; background-color:white; color:#3c3e70; font-weight: bold; z-index:1;}
+        .btn:focus{outline:none;}
+        .btn::before{content:""; position:absolute; width:100%; height:100%; top:100%; left:0; transition:all 0.4s; z-index:-1; background-color:gray;}
+
+        .btn:hover::before{transform:translateY(-100%);}
+        .btn:hover{color:#3c3e70;}
+
+       
+
+        
+        .main{padding:10px;border:solid 1px black;; outline-offset:-1px;width:800px; height: 600px; transition: all 0.35s; margin:30px 0 50px 0; transition:transform 1.5s;}
+        .main:hover{cursor:zoom-in;  transform: scale(1.1); }
+        
+        .container2 {border:solid 1px black;width:1350px; height:1050px; display:flex; background-color:white;  justify-content: center; flex-wrap: wrap; align-items: center; }
+        .container2 > article {border:solid 1px black;box-shadow: 7px 7px 7px rgba(0,0,0,0.3); border-radius:20px; width:400px; height:300px; background-color:white; margin:20px 20px; z-index:2;  }  
+        .container2 > article > img {width:400px; height: 270px; z-index:3; transition:transform 1.5s;border-radius:20px 20px 0 0;}
+        .container2 > article > img:hover {cursor:zoom-out;  transform: scale(0.9); transition: all 0.6s ease-in-out;}
+        .container2 > article > #jo{font-weight: bold; font-family: sans-serif; color:black; margin:0 150px; }
+        .container2 > article > i{float:right;font-size:25px; margin:-2px 10px 1px 1px;z-index: 5;}
+
+        #div1 {width: 100%; height: 600px; background-color: white; text-align: center; }
+        #div2 {width: 100%; height: 600px; background-color: white; text-align: center; display: none;}
+        #div3 {width: 100%; height: 600px; background-color: white; text-align: center; display: none;}
+        #div4 {width: 100%; height: 600px; background-color: white; text-align: center; display: none;}
+    
+    
+        @media (min-width:800px) {
+
+            
+            
+            .container2 {width:1350px; height:1050px;display:flex; justify-content: center; align-items: center; margin:0 auto; flex-wrap:wrap;}
+        }
+
+        @media (max-width:799px) {
+
+          
+            .main {width:100%; height:auto; margin:0 auto;}
+            .container2{width:90%; height:auto; flex-direction: column; margin:30px auto;}
+            .container{width:100%; height:auto; flex-direction: column; margin:30px auto; }
+         
+            
+
+
+        }
+        
+
+    
+      
+
+
+
+
+      
+    </style>
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.min.js"></script>
+    <script src="https://kit.fontawesome.com/29e4618e1b.js" crossorigin="anonymous"></script>
+
+    <script>
+        $(function() {
+            $('button:nth-of-type(1)').click(function() {
+                $("#div1").fadeIn();
+                $("#div2").hide();
+                $("#div3").hide();
+                $("#div4").hide();
+            });
+
+
+            $('button:nth-of-type(2)').click(function() {
+                $("#div2").fadeIn();
+                $("#div1").hide();
+                $("#div3").hide();
+                $("#div4").hide();
+            });
+
+
+            $('button:nth-of-type(3)').click(function() {
+                $("#div3").fadeIn();
+                $("#div1").hide();
+                $("#div2").hide();
+                $("#div4").hide();
+            });
+
+            $('button:nth-of-type(4)').click(function() {
+                $("#div4").fadeIn();
+                $("#div1").hide();
+                $("#div2").hide();
+                $("#div3").hide();
+        });
+    });
+    </script>
+
+</head>
+
+<body>
+    <div class="section">
+
+        <h3>경복궁의 사계절</h3>
+        <p>메인 > 경복궁 미리보기 > 경복궁의 사계절</p>
+
+        <hr>
+
+
+
+    </div>
+
+    <div class="container">
+
+        <button class="btn">경복궁의 봄</button>
+        <button class="btn">경복궁의 여름</button>
+        <button class="btn">경복궁의 가을</button>
+        <button class="btn">경복궁의 겨울</button>
+    </div>
+
+
+
+
+    <div id="div1">
+        <img class="main" src="img/2.jpg" alt="1">
+        
+        <div class="container2">
+            <article><img class="thumb_img" src="img/2.jpg">
+                <i class="fab fa-instagram-square"></i>
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-twitter"></i>
+                <p id="jo">경회루야경</p>
+
+            </article>
+
+            <article><img class="thumb_img" src="img/봄강녕전.jpg">
+                <i class="fab fa-instagram-square"></i>
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-twitter"></i>
+                <p id="jo">강녕전</p>
+            </article>
+            <article><img class="thumb_img" src="img/봄건청궁.jpg">
+                <i class="fab fa-instagram-square"></i>
+                <i class="fab fa-facebook"></i>
+             
+                    <i class="fab fa-twitter"></i>
+                <p id="jo">건청궁</p>
+            </article>
+            <article><img class="thumb_img" src="img/봄태원전.jpg">
+                <i class="fab fa-instagram-square"></i>
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-twitter"></i>
+                <p id="jo">태원전</p>
+            </article>
+            <article><img class="thumb_img" src="img/1.jpg">
+                <i class="fab fa-instagram-square"></i>
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-twitter"></i>
+                <p id="jo">경회루</p>
+            </article>
+            <article><img class="thumb_img" src="img/봄 영추문.jpg">
+                <i class="fab fa-instagram-square"></i>
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-twitter"></i>
+                <p id="jo">영추문</p>
+            </article>
+            <article><img class="thumb_img" src="img/광화문 야경.jpg">
+                <i class="fab fa-instagram-square"></i>
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-twitter"></i>
+                <p id="jo">광화문야경</p>
+            </article>
+            <article><img class="thumb_img" src="img/봄자경전.jpg">
+                <i class="fab fa-instagram-square"></i>
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-twitter"></i>
+                <p id="jo">자경전</p>
+            </article>
+            <article><img class="thumb_img" src="img/봄근정전.jpg">
+                <i class="fab fa-instagram-square"></i>
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-twitter"></i>
+                <p id="jo">근정전</p>
+            </article>
+
+
+        </div>
+        </div>
+  
+
+    <div id="div2">
+        <img class="main" src="img/일월오봉도.jpg" alt="1">
+        <div class="container2">
+            <article><img class="thumb_img2" src="img/여름영제교.jpg">
+                <i class="fab fa-instagram-square"></i>
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-twitter"></i>
+                <p id="jo">영제교</p>
+            </article>
+            <article><img class="thumb_img2" src="img/여름자경전.jpg">
+                <i class="fab fa-instagram-square"></i>
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-twitter"></i>
+                <p id="jo">자경전</p>
+            </article>
+            <article><img class="thumb_img2" src="img/집옥재.jpg">
+                <i class="fab fa-instagram-square"></i>
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-twitter"></i>
+                <p id="jo">집옥재</p>
+            </article>
+            <article><img class="thumb_img2" src="img/함화당.jpg">
+                <i class="fab fa-instagram-square"></i>
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-twitter"></i>
+                <p id="jo">함화당</p>
+            </article>
+            <article><img class="thumb_img2" src="img/여름향원정.jpg">
+                <i class="fab fa-instagram-square"></i>
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-twitter"></i>
+                <p id="jo">향원정</p>
+            </article>
+            <article><img class="thumb_img2" src="img/여름광화문.jpg">
+                <i class="fab fa-instagram-square"></i>
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-twitter"></i>
+                <p id="jo">광화문
+            </article>
+            <article><img class="thumb_img2" src="img/일월오봉도.jpg">
+                <i class="fab fa-instagram-square"></i>
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-twitter"></i>
+                <p id="jo">일월오봉도</p>
+            </article>
+            <article><img class="thumb_img2" src="img/여름근정전.jpg">
+                <i class="fab fa-instagram-square"></i>
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-twitter"></i>
+                <p id="jo">근정전</p>
+            </article>
+            <article><img class="thumb_img2" src="img/여름근전전.jpg">
+                <i class="fab fa-instagram-square"></i>
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-twitter"></i>
+                <p id="jo">근정전</p>
+            </article>
+        </div>
+    </div>
+
+    <div id="div3">
+        <img class="main" src="img/가을향원정.jpg" alt="1">
+        <div class="container2">
+            <article><img class="thumb_img3" src="img/가을향원정.jpg">
+                <i class="fab fa-instagram-square"></i>
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-twitter"></i>
+                <p id="jo">향원정</p>
+            </article>
+            <article><img class="thumb_img3" src="img/향원정가을.jpg">
+                <i class="fab fa-instagram-square"></i>
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-twitter"></i>
+                <p id="jo">향원정야경</p>
+            </article>
+            <article><img class="thumb_img3" src="img/가을경복궁.jpg">
+                <i class="fab fa-instagram-square"></i>
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-twitter"></i>
+                <p id="jo">경복궁</p>
+            </article>
+            <article><img class="thumb_img3" src="img/가을경회루.jpg">
+                <i class="fab fa-instagram-square"></i>
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-twitter"></i>
+                <p id="jo">경회루</p>
+            </article>
+            <article><img class="thumb_img3" src="img/가을숙문당.jpg">
+                <i class="fab fa-instagram-square"></i>
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-twitter"></i>
+                <p id="jo">숙문당</p>
+            </article>
+            <article><img class="thumb_img3" src="img/가을녹산.jpg">
+                <i class="fab fa-instagram-square"></i>
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-twitter"></i>
+                <p id="jo">녹산</p>
+            </article>
+            <article><img class="thumb_img3" src="img/가을신무문2.jpg">
+                <i class="fab fa-instagram-square"></i>
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-twitter"></i>
+                <p id="jo">신무문</p>
+            </article>
+            <article><img class="thumb_img3" src="img/가을신무문.jpg">
+                <i class="fab fa-instagram-square"></i>
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-twitter"></i>
+                <p id="jo">신무문</p>
+            </article>
+            <article><img class="thumb_img3" src="img/가을복수당.jpg">
+                <i class="fab fa-instagram-square"></i>
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-twitter"></i>
+                <p id="jo">복수당</p>
+            </article>
+        </div>
+    </div>
+
+    <div id="div4">
+        <img class="main" src="img/겨울향원정.jpg" alt="1">
+        <div class="container2">
+            <article><img class="thumb_img4" src="img/겨울동궁.jpg"><i class="fab fa-instagram-square"></i>
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-twitter"></i>
+                <p id="jo">동궁</p>
+            </article>
+            <article><img class="thumb_img4" src="img/겨울교태전.jpg"><i class="fab fa-instagram-square"></i>
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-twitter"></i>
+                <p id="jo">교태전</p>
+            </article>
+            <article><img class="thumb_img4" src="img/겨울경회루.jpg"><i class="fab fa-instagram-square"></i>
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-twitter"></i>
+                <p id="jo">경회루</p>
+            </article>
+            <article><img class="thumb_img4" src="img/겨울건천궁.jpg"><i class="fab fa-instagram-square"></i>
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-twitter"></i>
+                <p id="jo">건청궁</p>
+            </article>
+            <article><img class="thumb_img4" src="img/겨울근정전.jpg"><i class="fab fa-instagram-square"></i>
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-twitter"></i>
+                <p id="jo">근정전</p>
+            </article>
+            <article><img class="thumb_img4" src="img/겨울향원정.jpg"><i class="fab fa-instagram-square"></i>
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-twitter"></i>
+                <p id="jo">경회루야경</p>
+            </article>
+            <article><img class="thumb_img4" src="img/겨울강녕전.jpg"><i class="fab fa-instagram-square"></i>
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-twitter"></i>
+                <p id="jo">강녕전</p>
+            </article>
+            <article><img class="thumb_img4" src="img/함화당겨울.jpg"><i class="fab fa-instagram-square"></i>
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-twitter"></i>
+                <p id="jo">함화당</p>
+            </article>
+            <article><img class="thumb_img4" src="img/강녕전정면.jpg"><i class="fab fa-instagram-square"></i>
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-twitter"></i>
+                <p id="jo">강녕전</p>
+            </article>
+
+
+
+
+        </div>
+    </div>
+
+
+
+    <script>
+        $('.thumb_img').click(function () {
+            var src = $(this).attr('src');
+            $('.main').attr('src', src);
+        })
+
+        $('.thumb_img2').click(function () {
+            var src = $(this).attr('src');
+            $('.main').attr('src', src);
+        })
+
+        $('.thumb_img3').click(function () {
+            var src = $(this).attr('src');
+            $('.main').attr('src', src);
+        })
+
+        $('.thumb_img4').click(function () {
+            var src = $(this).attr('src');
+            $('.main').attr('src', src);
+        })
+    </script>
+
+</body>
+
+</html>
